@@ -9,9 +9,11 @@ namespace challenge_1
     {
         static void Main(string[] args)
         {
-            string str = "Race car";
+            //string str = "Race car";
             //string str = "OLLO";
             //string str = "banana";
+            Console.Write("Enter a word: ");
+            string str = Console.ReadLine();
 
             str = Regex.Replace(str, @"\s+", "");
             str = str.ToLower();
@@ -19,7 +21,14 @@ namespace challenge_1
             char[] arr = str.ToCharArray();
             Array.Reverse(arr);
 
-            Console.WriteLine(str == new string(arr));
+            if(str == new string(arr))
+            {
+                Console.WriteLine("Palindrome");
+            }
+            else
+            {
+                Console.WriteLine("Not a Palindrome");
+            }
         }
     }
 }
