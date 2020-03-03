@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace challenge_1
 {
@@ -8,14 +9,17 @@ namespace challenge_1
     {
         static void Main(string[] args)
         {
-            string str = "race car";
-            Regex.Replace(str, @"\s+", "");
+            string str = "Race car";
+            //string str = "OLLO";
+            //string str = "banana";
+
+            str = Regex.Replace(str, @"\s+", "");
+            str = str.ToLower();
 
             char[] arr = str.ToCharArray();
-
             Array.Reverse(arr);
 
-            Console.WriteLine(new string(arr) == str);
+            Console.WriteLine(str == new string(arr));
         }
     }
 }
